@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "totalResults": 11,
+  "articles": [
+    {
+      "author": "John Doe",
+      "title": "Lorem ipsum",
+      "description": "This is lorem ipsum",
+      "url": "https://www.lorem-ipsum.com",
+      "urlToImage": "https://www.lorem-ipsum.com/article.jpg",
+      "publishedAt": "2021-12-31T23:10:00Z",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  ]
+}

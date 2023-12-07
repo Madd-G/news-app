@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "totalResults": 11,
+  "articles": [
+    {
+      "author": "John Doe",
+      "title": "John Doe is here",
+      "description": "The description",
+      "url": "https://www.john-doe.com",
+      "urlToImage": "https://www.john-doe/john.png",
+      "publishedAt": "2021-12-31T21:59:11Z",
+      "content": "John Doe content"
+    }
+  ]
+}
