@@ -16,8 +16,9 @@ import '../../helpers/test_helper.mocks.dart';
 void main() {
 
   // Just an example, should be hidden
-  const API_KEY = 'ca863424791a427daa1084b1521f81eb';
-  // const API_KEY = '0e973f3bf60d4544a5623acf647909a3';
+  const API_KEY = '0e973f3bf60d4544a5623acf647909a3';
+  // const API_KEY = 'ca863424791a427daa1084b1521f81eb';
+
   const BASE_URL = 'https://newsapi.org/v2/';
   const COUNTRY = 'us';
   const pageSize = 20;

@@ -66,7 +66,11 @@ class _BookmarkPageState extends State<BookmarkPage> with RouteAware {
               ),
             );
           } else if (state is BookmarkArticleEmpty) {
-            return Center(child: Text(state.message));
+            return Center(
+                child: Text(
+              state.message,
+              key: const Key('empty-bookmark'),
+            ));
           } else if (state is BookmarkArticleError) {
             return Center(child: Text(state.message));
           } else {

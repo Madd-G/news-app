@@ -22,7 +22,7 @@ class _ArticlePageState extends State<ArticlePage> {
     getNews();
   }
 
-  void getNews() async {
+  void getNews() {
     context.read<ArticleListBloc>().add(ArticleListEvent());
   }
 

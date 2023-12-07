@@ -26,12 +26,6 @@ void main() {
       await tester.tap(firstItemCategory, warnIfMissed: false);
       await tester.pumpAndSettle();
 
-      // Bookmark article
-      final Finder btnBookmarkCategory = find.byIcon(Icons.bookmark_border);
-      await tester.pumpAndSettle(const Duration(seconds: 3));
-      await tester.tap(btnBookmarkCategory);
-      await tester.pumpAndSettle();
-
       // Back to list article
       final Finder btnBackDetailCategory = find.byIcon(Icons.arrow_back_ios);
       await tester.pumpAndSettle(const Duration(seconds: 3));
@@ -104,6 +98,11 @@ void main() {
       final Finder btnBackFromBookmark = find.byIcon(Icons.arrow_back_ios);
       await tester.pumpAndSettle(const Duration(seconds: 3));
       await tester.tap(btnBackFromBookmark);
+      await tester.pumpAndSettle();
+
+      // Check if there is no bookmarked article
+      expect(find.text('You haven\'t added a bookmark'), findsOneWidget);
+
       await tester.pumpAndSettle();
     });
   });
