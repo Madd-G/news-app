@@ -24,8 +24,8 @@ Here are the steps to run the application:
 
 1. **Clone the Repository:**
     ```bash
-    git clone git@github.com:Madd-G/news-app-test.git
-    cd news-app-test
+    git clone git@github.com:Madd-G/news-app.git
+    cd news-app
     ```
 
 2. **Install Dependencies:**
