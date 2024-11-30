@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:news_app/core/constants/constants.dart';
 import 'package:news_app/core/errors/errors.dart';
@@ -20,8 +21,13 @@ class ArticleRemoteDataSourceImpl implements ArticleRemoteDataSource {
 
   @override
   Future<ArticleResponse> getArticles() async {
-    final response = await client.get(Uri.parse(
-        '${baseUrl}top-headlines?country=$country&apiKey=$apiKey&pageSize=20'));
+    final response = await client.get(
+      Uri.parse('${baseUrl}top-headlines?country=$country&pageSize=20'),
+      headers: {HttpHeaders.authorizationHeader: apiKey},
+    );
+
+    print('...response: ${response.body}');
+    print('...response: ${response.body.runtimeType}');
 
     if (response.statusCode == 200) {
       return ArticleResponse.fromJson(json.decode(response.body));
@@ -34,8 +40,8 @@ class ArticleRemoteDataSourceImpl implements ArticleRemoteDataSource {
   Future<ArticleResponse> getArticleByCategory(String category) async {
     final response = await client.get(
       Uri.parse(
-        '${baseUrl}top-headlines?country=$country&category=$category&apiKey=$apiKey&pageSize=30',
-      ),
+          '${baseUrl}top-headlines?country=$country&category=$category&pageSize=30'),
+      headers: {HttpHeaders.authorizationHeader: apiKey},
     );
 
     if (response.statusCode == 200) {
@@ -49,8 +55,8 @@ class ArticleRemoteDataSourceImpl implements ArticleRemoteDataSource {
   Future<ArticleResponse> searchArticles(String query, int page) async {
     final response = await client.get(
       Uri.parse(
-        '${baseUrl}everything?q=$query&apiKey=$apiKey&pageSize=$pageSize&page=$page&language=$language',
-      ),
+          '${baseUrl}everything?q=$query&pageSize=$pageSize&page=$page&language=$language'),
+      headers: {HttpHeaders.authorizationHeader: apiKey},
     );
     if (response.statusCode == 200) {
       return ArticleResponse.fromJson(json.decode(response.body));

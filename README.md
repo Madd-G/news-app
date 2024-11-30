@@ -24,7 +24,7 @@ Here are the steps to run the application:
 
 1. **Clone the Repository:**
     ```bash
-    git clone git@github.com:Madd-G/news-app-test.git
+    git clone z
     cd news-app-test
     ```
 

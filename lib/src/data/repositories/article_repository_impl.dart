@@ -33,8 +33,7 @@ class ArticleRepositoryImpl implements ArticleRepository {
                   .toList() ??
               [],
         );
-        return Right(
-            result.articles?.map((model) => model.toEntity()).toList() ?? []);
+        return Right(result.articles?.map((model) => model.toEntity()).toList() ?? []);
       } on ServerException catch (e) {
         return Left(ServerFailure(e.message));
       }
